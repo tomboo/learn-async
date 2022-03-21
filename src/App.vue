@@ -24,6 +24,7 @@ import { RouterLink, RouterView } from "vue-router";
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/callback">Callback</RouterLink>
+        <RouterLink to="/promise">Promise</RouterLink>
       </nav>
     </div>
   </header>

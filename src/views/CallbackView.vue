@@ -19,7 +19,7 @@ function getPosts() {
   });
 }
 
-function createPost(post, callback, interval) {
+function createPost(post, callback, interval = 2000) {
   console.log("createPost");
   setTimeout(() => {
     posts.value.push({ id: postID.value, ...post });
@@ -29,9 +29,9 @@ function createPost(post, callback, interval) {
   }, interval);
 }
 
-createPost({ title: "Post One", body: "This is Post One" }, getPosts, 2000);
-createPost({ title: "Post Two", body: "This is Post Two" }, getPosts, 10000);
-createPost({ title: "Post Three", body: "This is Post Three" }, getPosts, 2000);
+createPost({ title: "Post One", body: "This is Post One" }, getPosts);
+createPost({ title: "Post Two", body: "This is Post Two" }, getPosts);
+createPost({ title: "Post Three", body: "This is Post Three" }, getPosts);
 //getPosts();
 </script>
 
@@ -50,7 +50,6 @@ createPost({ title: "Post Three", body: "This is Post Three" }, getPosts, 2000);
         {{ post }}
       </li>
     </ul>
-
   </div>
 </template>
 

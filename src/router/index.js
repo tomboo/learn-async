@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import CallbackViewVue from "../views/CallbackView.vue";
+import PromiseViewVue from "../views/PromiseView.vue";
 import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
@@ -19,9 +20,14 @@ const router = createRouter({
       component: () => import("../views/AboutView.vue"),
     },
     {
-      path: '/callback',
-      name: 'callback',
+      path: "/callback",
+      name: "callback",
       component: CallbackViewVue,
+    },
+    {
+      path: "/promise",
+      name: "promise",
+      component: PromiseViewVue,
     },
   ],
 });
