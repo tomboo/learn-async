@@ -2,7 +2,7 @@
 import { ref } from "vue";
 
 // posts database
-const postIdRef = ref(0);   // next id
+const postIdRef = ref(0); // next id
 const postsRef = ref([]);
 
 // fetched data
@@ -58,6 +58,7 @@ function createPost(post, interval = 2000) {
   return promise;
 }
 
+/*
 createPost({ title: "Post One", body: "This is Post One" })
   .then(getPosts)
   .catch((err) => console.error(err));
@@ -67,6 +68,23 @@ createPost({ title: "Post Two", body: "This is Post Two" })
 createPost({ title: "Post Three", body: "This is Post Three" })
   .then(getPosts)
   .catch((err) => console.error(err));
+*/
+
+async function init() {
+  await createPost({ title: "Post One", body: "This is Post One" });
+
+  getPosts();
+}
+
+async function fetchUsers() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = await res.json();
+
+  dataRef.value = data;
+}
+
+// init();
+fetchUsers();
 </script>
 
 <template>
