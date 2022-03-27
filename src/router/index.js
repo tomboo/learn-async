@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CallbackView from "../views/CallbackView.vue";
 import PromiseView from "../views/PromiseView.vue";
+import PromiseBasicsView from "../views/PromiseBasicsView.vue";
 import AsyncView from "../views/AsyncView.vue";
 
 const router = createRouter({
@@ -29,6 +30,11 @@ const router = createRouter({
       path: "/promise",
       name: "promise",
       component: PromiseView,
+    },
+    {
+      path: "/promise-basics",
+      name: "promise-basics",
+      component: PromiseBasicsView,
     },
     {
       path: "/async",
